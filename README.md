@@ -1,2 +1,2 @@
-# pmehta.github.io
+# Academic Portfolio
 Academic CV
