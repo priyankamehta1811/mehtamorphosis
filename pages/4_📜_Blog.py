@@ -2,14 +2,11 @@ import streamlit as st
 
 st.title("📜 Blog")
 
-st.markdown("<div class='main-header'>Research Highlights</div>", unsafe_allow_html=True)
-st.markdown(
-    """
-    - **Alternative Splicing in Viral Adaptation**: Investigating how RNA viruses leverage host splicing mechanisms.
-    - **Comparative Genomics**: Identifying conserved and unique features in viral genomes.
-    - **Host Immune Response**: Studying transcriptional changes in infected cells using multi-omics approaches.
-    """
-)
+#st.markdown("<div class='main-header'>Research Highlights</div>", unsafe_allow_html=True)
+# Link to the publications page from the homepage
+st.markdown("Unlocking the secrets of alternative splicing: A tale of two isoforms")
+st.markdown("[![1](https://pulse.igib.res.in/wp-content/uploads/2023/08/unnamed.png)](https://pulse.igib.res.in/?p=3133)")
+    
 
 # Footer
 st.markdown(
