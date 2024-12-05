@@ -168,6 +168,8 @@ img:hover {
 # Inject the CSS into the Streamlit app
 st.markdown(custom_css, unsafe_allow_html=True)
 
+
+st.markdown("### Beyond Academics", unsafe_allow_html=True)
 st.markdown("""##### Explore some of my creative projects:""")
     
 # Example of how you could display book covers and descriptions
@@ -181,15 +183,45 @@ st.image("pages/images/wallpainting.png")
 st.write("""The Usual Suspects Parody:  
          A line-up of SARS-CoV-2 Variants of Concern (VoCs)- Alpha, Delta and Omicron. 
          Who done it?""")
+st.image("pages/images/brain.jpg", caption="World Brain Day")
+
+st.markdown(""" 
+""")
+st.markdown("##### 30 Day Chart Challenges:")
+st.markdown(""" 
+""")
+st.markdown("Never too late to give a vintage map a modern makeover! ")
+col1, col2= st.columns([1,1])  # Adjust column ratios as needed
 
 
-st.markdown("<div class='main-header'>Co-Curricular Activities</div>", unsafe_allow_html=True)
-st.markdown("Some of my beloved 30 Day Chart Challenges")
+with col1:
+    st.image("pages/images/before.jpg", caption="2D vintage map")
+
+with col2:
+    st.image("pages/images/after.jpg", caption="3D rendering of Vintage map")
     
-st.markdown("### Workshops and Seminars")
-st.markdown("- **Indo-Vietnam training**: Hands-on Training Workshop on Sequencing Techniques.")
-st.markdown("- **Science Communication Seminar**: Presented research findings and communicated complex data effectively.")
-    
+#st.image("pages/images/bees.jpg", caption="3D rendering of Vintage map")
+st.markdown("What's your fitness goal for the Summer?  Consider incorporating #jumpropes (my favorite) into your fitness routine to achieve your summer body goals!  ")
+st.markdown("[![4](https://pbs.twimg.com/media/GK3i3kEXUAAroxO?format=jpg&name=4096x4096)](https://x.com/PriyankaMMehta/status/1778326991873134677/photo/1)")
+
+st.markdown("Global Land Cover Changes  Divergent trends in land coverage change between Israel and Korea reflect the complex interplay of socio-economic factors, environmental policies, and land management practices within each country. ")
+st.markdown("[![4](https://pbs.twimg.com/media/GKgKBCKbcAAJRT5?format=jpg&name=4096x4096)](https://x.com/PriyankaMMehta/status/1776681104499749278/photo/1)")
+
+st.markdown("Diverging Population Growth Rates amongst top 30 ranked nations.")
+st.markdown("[![4](https://pbs.twimg.com/media/GKd9zL3bwAA2nah?format=jpg&name=medium)](https://x.com/PriyankaMMehta/status/1776526905988239414/photo/1)")
+
+st.markdown("COVID-19 mortality data representation between India and other nations like US and UK. ")
+st.markdown("[![4](https://pbs.twimg.com/media/FQFQcSzacAQ_nZb?format=jpg&name=large)](https://x.com/PriyankaMMehta/status/1513579458690633729/photo/1)")
+
+st.markdown("Representing migration rate over past 6 decades by region.")
+st.markdown("[![4](https://pbs.twimg.com/media/FQFRKWNakAAjdpL?format=jpg&name=large)](https://x.com/PriyankaMMehta/status/1513580210079240192/photo/1)")
+
+st.markdown("Representing Average annual rate of population change by region over 6 decades.")
+st.markdown("[![4](https://pbs.twimg.com/media/FQFSN0paMAEt8PR?format=jpg&name=large)](https://x.com/PriyankaMMehta/status/1513581387277746181/photo/1)")
+
+
+st.markdown("Flowers of India is a go to site to satisfy your curiosity when you run into a beautiful flower during a hike or a morning walk.")
+st.markdown("[![4](https://pbs.twimg.com/media/FPhc-HtUcAIiymU?format=jpg&name=4096x4096)](https://x.com/PriyankaMMehta/status/1511059901040136194/photo/1)")   
 
 # Footer
 st.markdown(
