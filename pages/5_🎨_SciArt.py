@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 
 st.header("🎨 SciART!")
 
@@ -174,7 +175,7 @@ st.markdown("""##### Explore some of my creative projects:""")
     
 # Example of how you could display book covers and descriptions
 st.markdown("[![1](https://m.media-amazon.com/images/I/61xw+3TI16L.jpg)](https://shop.elsevier.com/books/genomic-surveillance-and-pandemic-preparedness/pandey/978-0-443-18769-8)")
-st.markdown("_*Designed the cover page of Genomic Surveillance and Pandemic Preparedness*_")
+st.markdown("_*Book cover design (click on the image)*_")
 
 # Display an image with Streamlit
 st.image("pages/images/covid.jpg")
@@ -184,6 +185,74 @@ st.write("""The Usual Suspects Parody:
          A line-up of SARS-CoV-2 Variants of Concern (VoCs)- Alpha, Delta and Omicron. 
          Who done it?""")
 st.image("pages/images/brain.jpg", caption="World Brain Day")
+
+# Add custom CSS for the flip effect
+css = """
+<style>
+.image-container {
+  width: 550px; /* Set the width of the container */
+  height: 400px; /* Set the height of the container */
+  perspective: 1000px; /* Add perspective for the 3D effect */
+  margin: auto;
+}
+
+.image-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.image-container:hover .image-flip {
+  transform: rotateY(180deg); /* Rotate the image on hover */
+}
+
+.image-flip img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.image-flip .back {
+  transform: rotateY(180deg); /* Flip the back image */
+}
+</style>
+"""
+st.markdown(css, unsafe_allow_html=True)
+
+def img_to_base64(img_path):
+    with open(img_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode("utf-8")
+
+
+front_base64 = img_to_base64("pages/images/labpost card.jpg")
+back_base64 = img_to_base64("pages/images/postcard back.jpg")
+
+st.write("#### Having fun with Biorender")
+
+st.write("**Ingen-hope Lab Post Card Design**")
+# Add the HTML structure for the flip effect
+html = f"""
+<div class="image-container">
+  <div class="image-flip">
+    <img src="data:image/jpeg;base64,{front_base64}" alt="Front Image" class="front">
+    <img src="data:image/jpeg;base64,{back_base64}" alt="Back Image" class="back">
+  </div>
+</div>
+"""
+
+# Display the custom CSS and HTML in Streamlit
+st.markdown(html, unsafe_allow_html=True)
+
+# Add some explanatory text
+st.write("_Hover over the image above to see it flip!_")
+
+st.write("**Badge Design**")
+st.markdown("An apoptotic macrophage, a few loathing friends, a gang of thugs, a few party crashers, a latecomer, and an unsuspecting victim... What will be the end? Can the cell get to eat its last doughnut or will it end with just a drool!")
+st.image("pages/images/badge.jpg", caption="BioRenderVISUALIZE2021")
+
 
 st.markdown(""" 
 """)
@@ -199,29 +268,30 @@ with col1:
 
 with col2:
     st.image("pages/images/after.jpg", caption="3D rendering of Vintage map")
-    
-#st.image("pages/images/bees.jpg", caption="3D rendering of Vintage map")
+
+st.markdown("Neo(nic) pesticides usage affect bee colonies. The data represents usage of neonic pesticides over two decades across different US regions and their effect on Bees population. ")    
+st.image("pages/images/bees.jpg", caption="Beeswarm Chart")
+
 st.markdown("What's your fitness goal for the Summer?  Consider incorporating #jumpropes (my favorite) into your fitness routine to achieve your summer body goals!  ")
-st.markdown("[![4](https://pbs.twimg.com/media/GK3i3kEXUAAroxO?format=jpg&name=4096x4096)](https://x.com/PriyankaMMehta/status/1778326991873134677/photo/1)")
+st.image("pages/images/day1.jpg", caption="Matrix Plot")
 
 st.markdown("Global Land Cover Changes  Divergent trends in land coverage change between Israel and Korea reflect the complex interplay of socio-economic factors, environmental policies, and land management practices within each country. ")
-st.markdown("[![4](https://pbs.twimg.com/media/GKgKBCKbcAAJRT5?format=jpg&name=4096x4096)](https://x.com/PriyankaMMehta/status/1776681104499749278/photo/1)")
+st.image("pages/images/day3.jpg", caption="Dumbell Chart")
 
 st.markdown("Diverging Population Growth Rates amongst top 30 ranked nations.")
-st.markdown("[![4](https://pbs.twimg.com/media/GKd9zL3bwAA2nah?format=jpg&name=medium)](https://x.com/PriyankaMMehta/status/1776526905988239414/photo/1)")
+st.image("pages/images/grwoth.jpg", caption="Scatter Plot")
 
 st.markdown("COVID-19 mortality data representation between India and other nations like US and UK. ")
-st.markdown("[![4](https://pbs.twimg.com/media/FQFQcSzacAQ_nZb?format=jpg&name=large)](https://x.com/PriyankaMMehta/status/1513579458690633729/photo/1)")
+st.image("pages/images/dotplot.jpg", caption="Beeswarm Chart")
 
 st.markdown("Representing migration rate over past 6 decades by region.")
-st.markdown("[![4](https://pbs.twimg.com/media/FQFRKWNakAAjdpL?format=jpg&name=large)](https://x.com/PriyankaMMehta/status/1513580210079240192/photo/1)")
+st.image("pages/images/immigration.jpg", caption="Line Plot")
 
 st.markdown("Representing Average annual rate of population change by region over 6 decades.")
-st.markdown("[![4](https://pbs.twimg.com/media/FQFSN0paMAEt8PR?format=jpg&name=large)](https://x.com/PriyankaMMehta/status/1513581387277746181/photo/1)")
-
+st.image("pages/images/excel.jpg", caption="3D Area Plot")
 
 st.markdown("Flowers of India is a go to site to satisfy your curiosity when you run into a beautiful flower during a hike or a morning walk.")
-st.markdown("[![4](https://pbs.twimg.com/media/FPhc-HtUcAIiymU?format=jpg&name=4096x4096)](https://x.com/PriyankaMMehta/status/1511059901040136194/photo/1)")   
+st.image("pages/images/flora.jpg", caption="Radial Bar Chart")
 
 # Footer
 st.markdown(
