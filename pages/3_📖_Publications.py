@@ -273,7 +273,7 @@ st.markdown("[![1](https://journals.asm.org/cms/10.1128/mbio.00590-23/asset/dd93
 st.markdown("2) SARS-CoV-2 infection severity and mortality is modulated by repeat-mediated regulation of alternative splicing _Microbilogy Spectrum_")
 st.markdown("[![2](https://journals.asm.org/cms/10.1128/spectrum.01351-23/asset/105439ca-d5fc-4de6-9648-a41ee7bdc481/assets/images/large/spectrum.01351-23.f006.jpg)](https://doi.org/10.1128/spectrum.01351-23)")
 # Add more publications similarly as needed
-st.markdown("3) Dysregulated metal ion homeostasis underscores non-canonical function of CD8+ T cell during COVID-19 _ Frontiers in Medicine_")
+st.markdown("3) Dysregulated metal ion homeostasis underscores non-canonical function of CD8+ T cell during COVID-19 _Frontiers in Medicine_")
 st.markdown("[![3](https://www.frontiersin.org/files/Articles/1282390/fmed-10-1282390-HTML-r1/image_m/fmed-10-1282390-g001.jpg)](https://doi.org/10.3389/fmed.2023.1282390)")
 # Add more publications similarly as needed
 st.markdown("4)  Single-cell RNA-Seq reveals intracellular microbial diversity within Immune cells during SARS-CoV-2 Infection and Recovery. _iScience_")
