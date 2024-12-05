@@ -146,7 +146,7 @@ input, textarea {
 st.markdown(custom_css, unsafe_allow_html=True)
 
 st.header(":mailbox: Get In Touch With Me!")
-st.markdown("Feel free to contact with me:")
+st.markdown(" ### Feel free to connect with me:")
 
 contact_form = """
     <form action="https://formsubmit.co/priyanka.m@igib.in" method="POST">
