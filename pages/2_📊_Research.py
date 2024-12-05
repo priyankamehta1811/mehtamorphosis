@@ -197,32 +197,44 @@ if __name__ == "__main__":
 st.image("pages/images/Figure 7.png",  caption="Integrative Clinico-Genomics of Host-Pathogen Interaction")
 st.markdown("""## Research Highlights """)
 
+st.markdown("""
+My PhD research focuses on understanding how alternative transcript isoforms contribute to differential disease severity and clinical outcomes in infectious disease, including SARS-CoV-2 and Dengue. 
+I investigate the impact of disrupted alternative splicing in the host and the adoption of non-canonical transcription mechanisms, such as internal Open Reading Frames (iORFs), 
+by viruses, in hospitalised patients. 
+Additionally, I am exploring the regulatory factors that govern these alternative isoforms and how they relate to disease progression and severity, 
+with the aim of uncovering novel insights into disease pathogenesis. 
+""")
+
+st.markdown("""Beyond this, I have been part of different studies such as:""")
+
 # Section 1: Clinico-genomics of SARS-CoV-2
 st.write("### 1. Pathogen Genome Architecture")
 st.markdown("""
 Understanding the evolution and epidemiological patterns of SARS-CoV-2 through clinico-genomics analyses has been a cornerstone in combating the pandemic. 
-This research focused on decoding viral mutations and host response to map the spread and progression of COVID-19 in India.
+This research focused on decoding viral mutations across VOCs to map the spread and progression of COVID-19 in India.  **[Click here](https://doi.org/10.1016/j.micres.2022.127099)**
 """)
 
 # Section 2: Host-pathogen interactions
 st.write("### 2. Host-Pathogen Interactions: Decoding Disease Severity")
 st.markdown("""
-Using transcriptomic data, this study dives into coding and non-coding RNAs, alternative splicing events, and co-infections. 
+Using transcriptomic data, I have been part of studies that delved into both the **[coding](https://doi.org/10.1002/ctm2.856)** and **[non-coding](https://doi.org/10.3389/fimmu.2022.1035111)** RNAs, **[alternative splicing](https://www.life-science-alliance.org/content/7/1/e202302305)** events, and **[co-infections](https://doi.org/10.1128/spectrum.02311-21
+)**. 
 The aim is to unravel the molecular mechanisms underlying disease severity, enabling a deeper understanding of host-pathogen dynamics.
 """)
 
 # Section 3: scRNA-seq and microbial investigations
-st.write("### 3. scRNA-seq Based Unconventional Investigations of Microbes at the Cellular Level")
+st.write("### 3. scRNA-seq Based Unconventional Investigations at the Cellular Level")
 st.markdown("""
-Single-cell RNA sequencing offers unparalleled granularity in studying microbial interactions within the host environment. 
-This research pioneers techniques for exploring microbial behavior and dynamics at the single-cell level.
+Single-cell RNA sequencing offers unparalleled granularity in studying interactions within the host environment. 
+I have been part of some unconventional studies that explored **[cell-specific housekeeping role of lncRNAs](https://doi.org/10.1093/nargab/lqae023)** and **[intracellular microbial diversity](https://doi.org/10.1016/j.isci.2023.108357)** within immune cells during SARS-CoV-2 infection and recovery
+This research pioneers techniques for exploring scRNA-seq data beyond conventional gene-expression studies.
 """)
 
 # Section 4: Metagenomics investigations
 st.write("### 4. Metagenomics-Based Investigations")
 st.markdown("""
-Delving into complex microbial communities using metagenomic data, this research sheds light on microbial diversity, functionality, and interactions. 
-The focus spans 16S rRNA sequencing, whole-genome sequencing, and their applications in understanding microbial ecosystems.
+Through metagenomic data analysis, I have collaborated on exploring microbial diversity, functionality, and interactions in **[hypersaline ecosystem](https://doi.org/10.3389/fmicb.2021.686549)** as well as time-dependent modulation of gut microbiome in **[fatty liver disease]( https://doi.org/10.3389/fmicb.2023.1210517)**.
+These studies primarily focused on 16S rRNA sequencing and whole-genome sequencing, aiming to advance our understanding of microbial ecosystems.
 """)
 
 st.markdown("""---""")
