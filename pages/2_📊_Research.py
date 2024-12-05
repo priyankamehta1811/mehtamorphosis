@@ -1,7 +1,6 @@
 import streamlit as st
 
 
-
 # Add custom CSS
 custom_css = """
 <style>
@@ -50,13 +49,34 @@ body,[data-testid="stAppViewContainer"],[data-testid="stHeader"] {
     }
   }
 
+
 /* Center content */
-.stApp {
+h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  #height: 100vh;
+  text-align: left;
+}  
+
+/* Center content */
+h4,[data-testid=stElementContainer] {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  #height: 100vh;
+  text-align: justify;
+}
+
+/* Center content */
+.stApp,[data-testid=stDownloadButton]  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  #height: 100vh;
   text-align: center;
 }
 
@@ -101,7 +121,7 @@ body,[data-testid="stAppViewContainer"],[data-testid="stHeader"] {
 }
 
 /* Headers */
-h1, h2, h3, h4, h5, h6 {
+h1,h2 {
   font-family: 'Orbitron', sans-serif ;
   color: #00ffe7;
   text-shadow: 0px 0px 5px #00ffe7, 0px 0px 20px #00ffe7;
@@ -148,69 +168,212 @@ input, textarea {
 
 /* Add neon pink glow and drop shadow to images */
 img {
-  border: 0.1px solid #ff007f;
-  box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+  border: 0.1px solid #FFFFFF;
+  box-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
   transition: all 0.3s ease;
 }
 
 img:hover {
-  box-shadow: 0 0 25px #ff007f, 0 0 50px #ff007f, 0 0 100px #ff007f;
+  box-shadow: 0 0 25px #00ffe7, 0 0 50px #00ffe7, 0 0 100px #00ffe7;
 }
+
 
 </style>
 """
 # Inject the CSS into the Streamlit app
 st.markdown(custom_css, unsafe_allow_html=True)
 
-st.title("🔬 Research @ IGIB")
-st.markdown(
-    """
-    - **Alternative Splicing in Viral Adaptation**: Investigating how RNA viruses leverage host splicing mechanisms.
-    - **Comparative Genomics**: Identifying conserved and unique features in viral genomes.
-    - **Host Immune Response**: Studying transcriptional changes in infected cells using multi-omics approaches.
-    """
-)
+st.title("🔬 Research")
 
-import streamlit as st
+def load_pdf_button(file_path, button_text="My Resume"):
+    with open(file_path, 'rb') as pdf:
+        pdf_bytes = pdf.read()
+        return st.download_button(button_text, pdf_bytes, file_name="pages/PM_CV_final.pdf")
 
-# Title
-st.markdown("# Strengths & Skills")
+if __name__ == "__main__":
+    load_pdf_button("pages/PM_CV_final.pdf") 
 
-# Introductory Text
+# Function to embed an image
+st.image("pages/images/Figure 7.png",  caption="Integrative Clinico-Genomics of Host-Pathogen Interaction")
+st.markdown("""## Research Highlights """)
+
+# Section 1: Clinico-genomics of SARS-CoV-2
+st.write("### 1. Pathogen Genome Architecture")
 st.markdown("""
-I bring a strong interdisciplinary approach, combining computational expertise with a deep understanding of biological systems. Below are the key strengths and skills that define my work in bioinformatics, data analysis, and research.
+Understanding the evolution and epidemiological patterns of SARS-CoV-2 through clinico-genomics analyses has been a cornerstone in combating the pandemic. 
+This research focused on decoding viral mutations and host response to map the spread and progression of COVID-19 in India.
 """)
 
+# Section 2: Host-pathogen interactions
+st.write("### 2. Host-Pathogen Interactions: Decoding Disease Severity")
+st.markdown("""
+Using transcriptomic data, this study dives into coding and non-coding RNAs, alternative splicing events, and co-infections. 
+The aim is to unravel the molecular mechanisms underlying disease severity, enabling a deeper understanding of host-pathogen dynamics.
+""")
+
+# Section 3: scRNA-seq and microbial investigations
+st.write("### 3. scRNA-seq Based Unconventional Investigations of Microbes at the Cellular Level")
+st.markdown("""
+Single-cell RNA sequencing offers unparalleled granularity in studying microbial interactions within the host environment. 
+This research pioneers techniques for exploring microbial behavior and dynamics at the single-cell level.
+""")
+
+# Section 4: Metagenomics investigations
+st.write("### 4. Metagenomics-Based Investigations")
+st.markdown("""
+Delving into complex microbial communities using metagenomic data, this research sheds light on microbial diversity, functionality, and interactions. 
+The focus spans 16S rRNA sequencing, whole-genome sequencing, and their applications in understanding microbial ecosystems.
+""")
+
+st.markdown("""---""")
 # **Coding Languages Section**
-st.markdown("### Programming Languages & Tools")
+st.markdown("""## Skills """)
 st.markdown("""
-- **R**: Advanced proficiency in bioinformatics packages and statistical analysis.
-- **Python**: Skilled in data manipulation, bioinformatics pipelines, and automation.
-- **Perl**: Expertise in processing large-scale biological data.
-- **Streamlit**: Development of interactive web applications for data visualization and bioinformatics tools.
-- **HTML & CSS**: Basic knowledge for front-end web design, particularly in scientific contexts.
+ """)
+st.markdown("""#### Computational """)
+# Transparent box style with white text
+transparent_box_style = """
+<style>
+.simple-box {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent box */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light white border */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    color: white; /* White text */
+}
+</style>
+"""
+
+# Inject the custom CSS
+st.markdown(transparent_box_style, unsafe_allow_html=True)
+
+# Create transparent boxes for each column
+col1, col2, col3 = st.columns([1, 1, 1])
+
+with col1:
+    st.markdown(
+        """
+        <div class="simple-box">
+            <strong>Coding Languages</strong><br>
+            R<br>
+            Python
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with col2:
+    st.markdown(
+        """
+        <div class="simple-box">
+            <strong>Scripting</strong><br>
+            Shell<br>
+            Perl
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with col3:
+    st.markdown(
+        """
+        <div class="simple-box">
+            <strong>Web Development</strong><br>
+            HTML & CSS<br>
+            Streamlit
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+st.markdown("""
+ """)
+st.markdown("""#### Genomic Analysis """)
+
+# Transparent box style with white text
+transparent_box_style = """
+<style>
+.simple-box {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent box */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light white border */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    color: white; /* White text */
+}
+</style>
+"""
+
+# Inject the custom CSS
+st.markdown(transparent_box_style, unsafe_allow_html=True)
+
+# Create transparent boxes for each column
+col1, col2, col3 = st.columns([1, 1, 1])
+
+with col1:
+    st.markdown(
+        """
+        <div class="simple-box">
+            <strong>Illumina</strong><br>
+            Bulk/scRNAseq<br>
+            Viral WGS <br>
+            16S rRNA
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with col2:
+    st.markdown(
+        """
+        <div class="simple-box">
+            <strong>Oxford Nanopore Tech.</strong><br>
+            Human and Viral WGS<br>
+            RNAseq
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with col3:
+    st.markdown(
+        """
+        <div class="simple-box">
+            <strong>Element Bioscience</strong><br>
+            RNAseq<br>
+            </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+st.markdown("""
+---
+
 """)
 
-# **Statistical Techniques Section**
-st.markdown("### Statistical & Computational Techniques")
-st.markdown("""
-I utilize a broad range of statistical techniques to analyze genomic and transcriptomic data, ensuring robust insights into complex biological systems.
-- **RNA-seq Data Analysis**: Comprehensive analysis of gene expression and splicing patterns.
-- **Single-Cell RNA-seq**: Investigating cellular heterogeneity and gene regulatory mechanisms.
-- **NGS Data Analysis**: Expertise in processing Nanopore and Illumina platform data for genomic and transcriptomic insights.
-- **Metagenomics**: Analysis of 16S rRNA and WGS to study microbial communities and their interactions.
-- **Biostatistics**: Advanced statistical modeling for biological data, including regression, hypothesis testing, and survival analysis.
-- **Data Visualization**: Creating informative and interactive visualizations to represent complex biological datasets clearly.
-""")
+st.markdown("## Workshops")
+st.markdown(" **Indo-Vietnam Hands-on Training Workshop**:")
 
-# **Bioinformatics Research Techniques**
-st.markdown("### Bioinformatics & Genomic Research Techniques")
-st.markdown("""
-- **Phylogenetic Analysis**: Reconstruction of evolutionary relationships using genomic data.
-- **Mutational Analysis**: Investigating genetic variants and their impacts on disease progression and treatment outcomes.
-""")
+col1, col2 = st.columns([1,1])  # Adjust column ratios as needed
 
+with col1:
+  st.image("pages/images/first.jpg", caption="Compering at 1st INDO-VIETNAM Workshop")
+with col2:
+  st.image("pages/images/2nd.jpeg", caption="Compering at 2st INDO-VIETNAM Workshop")
 
+st.markdown("## Conferences:")
+
+st.markdown(" **CSIR One Week One Lab (OWOL)**  _Srinagar, India, '24_")
+st.markdown("Presenting our lab's work at Univeristy of Kashmir, complete with a bonus of reuniting with an old lab buddy!")
+st.image("pages/images/owol.jpg", caption="One Week One Lab Event")
+
+st.markdown(" **29th Annual RNA Society Meeting** _Edinburgh, Scotland, '24_")
+st.markdown("Had a fantastic time at the #RNA2024 poster session at the RNASociety meeting in Edinburgh. Amazing opportunity to share my work at RajeshPandeyLab with fellow RNA biologists. Also got exciting new ideas to explore in my own data!")
+st.image("pages/images/RNA_society.jpg", caption="RNA Society")
 
 
 # Usage
@@ -227,10 +390,4 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-def load_pdf_button(file_path, button_text="Resume"):
-    with open(file_path, 'rb') as pdf:
-        pdf_bytes = pdf.read()
-        return st.download_button(button_text, pdf_bytes, file_name="pages/PM_CV_final.pdf")
 
-if __name__ == "__main__":
-    load_pdf_button("pages/PM_CV_final.pdf") 
