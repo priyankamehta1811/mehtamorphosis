@@ -147,7 +147,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 st.markdown("Hi, my name is Priyanka Mehta.")
 st.markdown("I'm a bioinformatician and data visualization enthusiast.")
-st.markdown("and this is my Cyberpunk 2077 inspired academic portfolio")
+
 st.markdown(
         """
         <p class='sub-header' style='text-align: justify;'>
@@ -160,7 +160,7 @@ st.markdown(
         unsafe_allow_html=True
     )
 st.image("pages/images/DALL·E.webp", caption="created using DALL.E")
-
+st.markdown("This is my Cyberpunk 2077-inspired academic portfolio")
 
 # Footer
 st.markdown(
